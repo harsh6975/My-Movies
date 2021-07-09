@@ -3,7 +3,7 @@
     justify-content: space-around;
     align-items: center;
     background-image: url(../../Images/back1.jpg);
-    z-index: -1;
+    z-index: -999;
 }
 
 .left{
@@ -12,4 +12,7 @@
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
+}
+.right{
+    z-index: 0;
 }

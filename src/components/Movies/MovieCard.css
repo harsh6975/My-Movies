@@ -1,0 +1,26 @@
+.box{
+    display: flex;
+    padding-top: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.item {
+    position: relative;
+    display: block;
+    margin: 30px;
+    transition: transform 500ms;
+}
+.item img {
+    display: block;
+    max-width: 100%;
+  }
+  
+  .box .item:focus,
+  .box .item:hover {
+    transform: scale(1.3);
+    z-index: 1;
+  }
+  
+  
+  

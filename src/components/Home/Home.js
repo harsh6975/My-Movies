@@ -1,5 +1,5 @@
 import './Home.css'
-import img from '../../Images/Movie1.png'
+import img from '../../Images/logo2.png'
 
 const Home=()=>{
     return(

@@ -1,0 +1,10 @@
+.moviecontainer{
+    background-image: url(../../Images/back5.jpg);
+    z-index: -999;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
