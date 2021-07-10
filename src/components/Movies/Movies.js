@@ -1,18 +1,17 @@
-import React from 'react';
-import MovieCard from './MovieCard'
+import React from "react";
+import MovieCard from "./MovieCard";
 import { data } from "./data";
-import './Movies.css';
+import "./Movies.css";
 
-class Movies extends React.Component{
-  render() {
-      return(
-      <div className="moviecontainer" >
-         {data.map(movie=>(
-             <MovieCard movie={movie}/>
-         ))}
-      </div>
-  )
-  }
+class Movies extends React.Component {
+ render(){ return (
+    <div className="moviecontainer">
+      {data.map((movie, index) => (
+        <MovieCard movie={movie} key={index} />
+      ))}
+    </div>
+  );
+      }
 };
 
 export default Movies;

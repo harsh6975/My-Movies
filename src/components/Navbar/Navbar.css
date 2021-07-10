@@ -1,0 +1,59 @@
+
+.NavbarItems{
+    background-image: linear-gradient(#232323,#282828,#252525,#222222,#272727,#1F1F1F,#262626);
+    background-color: black;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    padding-top: 10px;
+}
+.navbar-logo{
+    color: white;
+    justify-self: start;
+    margin-left: 20px;
+    cursor: pointer;
+    height: 80px;
+}
+
+.input{
+    justify-content: center;
+    margin-right: 120px;
+}
+
+.giveInput{
+    border-radius: 30px;
+    padding: 10px 20px;
+    background-color: white;
+    margin-right: 5px ;
+}
+.nav-menu{
+    display: grid;
+    grid-template-columns: repeat(5,auto);
+    grid-gap: 40px;
+    list-style: none;
+    text-align: center;
+    width: 70vw;
+    justify-content: end;
+}
+
+.nav-links{
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
+
+.fa-bars{
+    color: white;
+}
+
+.nav-link-mobile{
+    display: none;
+}
+
+.menu-icon{
+   color: white;
+   display: none;
+}

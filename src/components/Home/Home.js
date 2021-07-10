@@ -9,7 +9,7 @@ const Home=()=>{
                 <h1>Favourite Movies</h1>
             </div>
             <div className="right">
-                <img src={img}></img>
+                <img src={img} alt="logo"></img>
             </div>
         </div>
     );

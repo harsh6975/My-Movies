@@ -1,17 +1,17 @@
 import './Button.css';
 
-const STYLE = ["btn--primary", "btn--outline"];
+const STYLE = ['btn--primary', 'btn--outline'];
 
-const SIZE = ["btn--medium", "btn--large"];
+const SIZE = ['btn--medium', 'btn--large'];
 
 export const Button = ({
   children,
   type,
   onClick,
   buttonStyle,
-  buttonSize,
+  buttonSize
 }) => {
-    const checkButtonStyle=STYLE.includes(buttonStyle)?buttonStyle:STYLE[1]
+    const checkButtonStyle=STYLE.includes(buttonStyle)?buttonStyle:STYLE[0]
     const checkButtonSize=SIZE.includes(buttonSize)?buttonSize:SIZE[0]
 
     return(

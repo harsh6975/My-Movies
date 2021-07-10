@@ -4,3 +4,8 @@
   padding: 0;
   font-family: 'Lato', sans-serif;
 }
+.nav{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
