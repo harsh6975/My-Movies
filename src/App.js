@@ -4,6 +4,7 @@ import Movies from "./components/Movies/Movies";
 import Navbar from "./components/Navbar/Navbar";
 import {data} from './data';
 import "./App.css";
+import { addmovies } from "./Redux/Action/type";
 
 
 
@@ -25,14 +26,11 @@ class App extends React.Component {
 
     // dispatch action (to get vaules in store)
 
-    store.dispatch({
-      type: 'Add_MOVIES',
-      movies: data
-    })
+    store.dispatch(addmovies(data))
     console.log('State',this.props.store.getState())
   }
   render() {
-    const movies=this.props.store.getState()
+    const {list}=this.props.store.getState()
     return (
       <div className="App">
         <section className="nav">
@@ -42,7 +40,7 @@ class App extends React.Component {
           <Home />
         </section>
         <section id="movie">
-          <Movies movies={movies} />
+          <Movies movies={list} />
         </section>
       </div>
     );
