@@ -1,26 +1,43 @@
-.box{
-    padding-top: 30px;
-    justify-content: center;
-    align-items: center;
+.box {
+  padding-top: 30px;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
 }
 
 .item {
-    position: relative;
-    display: block;
-    margin: 30px;
-    transition: transform 500ms;
+  position: relative;
+  display: block;
+  margin: 30px;
+  transition: transform 500ms;
+  cursor: pointer;
 }
 .item img {
-    display: block;
-    max-width: 90%;
-  }
-  
-  .box .item:focus,
-  .box .item:hover {
-    transform: scale(1.5);
-    z-index: 1;
-  }
+  display: block;
+  max-width: 90%;
+}
 
-  
-  
-  
+.box .item:focus,
+.box .item:hover {
+  transform: scale(1.3);
+  z-index: 1;
+}
+.butt{
+  display: flex;
+  justify-content: space-evenly;
+}
+.fbut{
+  padding: 4px 18px;
+  border-radius: 15px;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 8px;
+  z-index: 5;
+  font-weight: 500;
+  font-size: 22px;
+}
+.nofav{
+  color: white;
+  font-size: 30px;
+  padding: 30px;
+}

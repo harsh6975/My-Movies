@@ -9,7 +9,12 @@ class Movies extends React.Component {
     return (
       <div className="moviecontainer">
         {movies.map((item, index) => (
-          <MovieCard movie={item} key={index} />
+          <MovieCard 
+            movie={item} 
+            key={index} 
+            dispatch={this.props.dispatch}
+            isfav={this.props.isfav(item)}
+          />
         ))}
       </div>
     );

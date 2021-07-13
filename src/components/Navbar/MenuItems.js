@@ -15,10 +15,12 @@ export const MenuItems = [
     title: "Favourite",
     url: "#",
     cName: "nav-links",
+    scrol: "fav"
   },
   {
     title: "Contact Us",
     url: "#",
     cName: "nav-links",
+    scrol: "contact"
   },
 ];
