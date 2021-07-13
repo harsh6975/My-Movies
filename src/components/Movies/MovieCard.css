@@ -12,12 +12,12 @@
 }
 .item img {
     display: block;
-    max-width: 80%;
+    max-width: 90%;
   }
   
   .box .item:focus,
   .box .item:hover {
-    transform: scale(1.3);
+    transform: scale(1.5);
     z-index: 1;
   }
 
