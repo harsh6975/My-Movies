@@ -1,11 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { createStore } from "redux";
+import { applyMiddleware, createStore } from "redux";
 import App from "./App";
-import movies from "./Redux/Reducer";
+import rootReducer from "./Redux/Reducer";
 
+// middleware
+//  
 
-const store= createStore(movies);
+const logger =
+  ({ dispatch, getState }) =>
+  (next) =>
+  (action) => {
+    console.log("acton type", action.type);
+    next(action);
+  };
+
+const store = createStore(rootReducer, applyMiddleware(logger));
 // console.log('store',store);
 // console.log('Intial state',store.getState())
 
@@ -13,6 +23,7 @@ const store= createStore(movies);
 //     type:'Add-movies',
 //     movies:[{name: 'Harsh sinha'}]
 // })
-console.log('Final state',store.getState())
 
-ReactDOM.render(<App store={store}/>, document.getElementById("root"));
+console.log("Final state", store.getState());
+
+ReactDOM.render(<App store={store} />, document.getElementById("root"));

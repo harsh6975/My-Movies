@@ -7,6 +7,7 @@ import "./App.css";
 import { addmovies } from "./Redux/Action/type";
 import FavMovies from "./components/Movies/FavMovie";
 
+
 class App extends React.Component {
   componentDidMount() {
     // make api call (here we dont have api)
@@ -25,20 +26,22 @@ class App extends React.Component {
   }
 
   isfav = (movie) => {
-    const { favourite } = this.props.store.getState();
+    const {movies}=this.props.store.getState();
+    const { favourite } = movies;
     const index = favourite.indexOf(movie);
     if (index !== -1) {
       return true;
-    }
+    } 
     return false;
   };
   render() {
-    const { list, favourite } = this.props.store.getState();
+    const {movies,search}=this.props.store.getState();
+    const { list, favourite } = movies;
     console.log("fav", favourite);
     return (
       <div className="App">
         <section className="nav">
-          <Navbar />
+          <Navbar search={search}/>
         </section>
         <section id="home">
           <Home />

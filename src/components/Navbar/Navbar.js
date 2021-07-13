@@ -6,11 +6,13 @@ import { Link as Link1 } from "react-scroll";
 import logo from '../../Images/logo.png';
 import "./Navbar.css";
 
-const Navbar = () => {
+const Navbar = (props) => {
   const [clicked,setclick]=useState('false')
   const handleClick = () => {
       setclick(!clicked);
   };
+
+  
 
     return (
       <nav className="NavbarItems">
