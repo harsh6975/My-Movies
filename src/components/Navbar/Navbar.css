@@ -57,3 +57,44 @@
    color: white;
    display: none;
 }
+
+
+.search-results {
+    position: absolute;
+    background:black;
+    width: fit-content;
+    box-sizing: border-box;
+    top: 92px;
+    right: 53%;
+    border-radius: 10px;
+    z-index: 100;
+  }
+  .search-result .movie-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .search-result .movie-info button {
+    margin: 20px 10px;
+    background: #21ba45;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+    padding: 9px 5px;
+    border-radius: 4px;
+  }
+  .search-result {
+    display: flex;
+  }
+  .search-result img {
+    height: 200px;
+    background-color: black;
+  }
+  .search-result > div span {
+    font-size: 20px;
+    padding: 10px;
+    font-weight: 600;
+    color: white;
+  }
+  

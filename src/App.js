@@ -2,11 +2,10 @@ import React from "react";
 import Home from "./components/Home/Home";
 import Movies from "./components/Movies/Movies";
 import Navbar from "./components/Navbar/Navbar";
-import { data } from "./data";
+import { data as movieList } from "./data";
 import "./App.css";
 import { addmovies } from "./Redux/Action/type";
 import FavMovies from "./components/Movies/FavMovie";
-
 
 class App extends React.Component {
   componentDidMount() {
@@ -21,27 +20,33 @@ class App extends React.Component {
     });
     // dispatch action (to get vaules in store)
 
-    store.dispatch(addmovies(data));
+    store.dispatch(addmovies(movieList));
     console.log("State", this.props.store.getState());
   }
 
   isfav = (movie) => {
-    const {movies}=this.props.store.getState();
+    const { movies } = this.props.store.getState();
     const { favourite } = movies;
     const index = favourite.indexOf(movie);
     if (index !== -1) {
       return true;
-    } 
+    }
     return false;
   };
   render() {
-    const {movies,search}=this.props.store.getState();
+    const { movies, search } = this.props.store.getState();
     const { list, favourite } = movies;
+    console.log(this.props.store.getState());
+
     console.log("fav", favourite);
     return (
       <div className="App">
         <section className="nav">
-          <Navbar search={search}/>
+          <Navbar
+            movies={movies}
+            search={search}
+            dispatch={this.props.store.dispatch}
+          />
         </section>
         <section id="home">
           <Home />

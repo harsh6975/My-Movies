@@ -1,6 +1,8 @@
 // API KEY : 3ca5df7
 export const data = [
-  {
+  {Title:"Deadpool",
+   Year:"2016","Rated":"R","Released":"12 Feb 2016","Runtime":"108 min","Genre":"Action, Adventure, Comedy, Sci-Fi","Director":"Tim Miller","Writer":"Rhett Reese, Paul Wernick","Actors":"Ryan Reynolds, Karan Soni, Ed Skrein, Michael Benyaer","Plot":"A wisecracking mercenary gets experimented on and becomes immortal but ugly, and sets out to track down the man who ruined his looks.","Language":"English","Country":"USA","Awards":"28 wins & 78 nominations.","Poster":"https://m.media-amazon.com/images/M/MV5BYzE5MjY1ZDgtMTkyNC00MTMyLThhMjAtZGI5OTE1NzFlZGJjXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg","Ratings":[{"Source":"Internet Movie Database","Value":"8.0/10"},{"Source":"Rotten Tomatoes","Value":"85%"},{"Source":"Metacritic","Value":"65/100"}],"Metascore":"65","imdbRating":"8.0","imdbVotes":"926,791","imdbID":"tt1431045","Type":"movie","DVD":"21 Apr 2016","BoxOffice":"$363,070,709","Production":"Kinberg Genre, Donners&#39; Company","Website":"N/A","Response":"True"}
+  ,{
     Title: 'The Avengers',
     Year: '2012',
     Rated: 'PG-13',
