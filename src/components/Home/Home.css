@@ -1,6 +1,6 @@
 .container{
     display: flex;
-    justify-content: space-around;
+    justify-content:space-around;
     align-items: center;
     background-image: url(../../Images/back1.jpg);
     z-index: -999;
@@ -15,4 +15,20 @@
 }
 .right{
     z-index: 0;
+}
+
+
+@media only screen and (max-width: 778px) {
+    .container{
+        justify-content: end;
+    }
+    .imglogo{
+        width: 100%;
+        height: 100%;
+    }
+    .left{
+        font-size: 25px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
 }

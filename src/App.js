@@ -37,7 +37,7 @@ class App extends React.Component {
     return false;
   };
   render() {
-    const { movies, search } = this.props;
+    const { movies } = this.props;
     const { list, favourite } = movies;
 
     console.log(this.props);

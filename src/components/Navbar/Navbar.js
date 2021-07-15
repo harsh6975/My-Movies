@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { Link as Link1 } from "react-scroll";
 import { addMovieToList, movieSearch } from "../../Redux/Action/type";
 
-import { Button } from "../Button";
 import { MenuItems } from "./MenuItems";
 import logo from "../../Images/logo.png";
 import "./Navbar.css";
@@ -36,23 +35,21 @@ const Navbar = (props) => {
       <div className="menu-icon" onClick={handleClick}>
         <i className={!clicked ? "fas fa-times" : "fas fa-bars"}></i>
       </div>
-
-      <ul className={!clicked ? "nav-menu active" : "nav-menu"}>
-        <div className="input">
-          <input
-            placeholder="Search"
-            className="giveInput"
-            onChange={handleChange}
-          />
-          <Button onClick={handleSearch}>Search</Button>
-        </div>
-        {showSearchResults && (
+      <div className="input">
+        <input
+          placeholder="Search"
+          className="giveInput"
+          onChange={handleChange}
+        />
+        <button onClick={handleSearch} className="mybut">Search</button>
+      </div>
+      {showSearchResults && (
           <div className="search-results">
             <div className="search-result">
               <img src={movie.Poster} alt="search-pic" />
               <div className="movie-info">
                 <span>{movie.Title}</span>
-                <span>Rating : {movie.imdbRating }</span>
+                <span>Rating : {movie.imdbRating}</span>
                 <button onClick={() => handleAddToMovies(movie)}>
                   Add to Movies
                 </button>
@@ -60,6 +57,7 @@ const Navbar = (props) => {
             </div>
           </div>
         )}
+      <ul className={!clicked ? "nav-menu active" : "nav-menu"}>
         {MenuItems.map((items, index) => {
           return (
             <li key={index}>
@@ -82,11 +80,11 @@ const Navbar = (props) => {
 };
 // export default Navbar;
 
-function mapStateToProps(state){
-  return{
-    movies:state.movies,
-    search:state.search
-  }
+function mapStateToProps(state) {
+  return {
+    movies: state.movies,
+    search: state.search,
+  };
 }
 
 export default connect(mapStateToProps)(Navbar);
