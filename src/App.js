@@ -1,31 +1,34 @@
 import React from "react";
+import { connect} from "react-redux";
+import { addmovies } from "./Redux/Action/type";
+
 import Home from "./components/Home/Home";
 import Movies from "./components/Movies/Movies";
 import Navbar from "./components/Navbar/Navbar";
 import { data as movieList } from "./data";
-import "./App.css";
-import { addmovies } from "./Redux/Action/type";
 import FavMovies from "./components/Movies/FavMovie";
+import "./App.css";
+
 
 class App extends React.Component {
   componentDidMount() {
     // make api call (here we dont have api)
 
-    const { store } = this.props;
+    // const { store } = this.props;
 
     // const =this.props.getState()
-    store.subscribe(() => {
-      console.log("subscriber");
-      this.forceUpdate();
-    });
+    // store.subscribe(() => {
+    //   console.log("subscriber");
+    //   this.forceUpdate();
+    // });
     // dispatch action (to get vaules in store)
 
-    store.dispatch(addmovies(movieList));
-    console.log("State", this.props.store.getState());
+    this.props.dispatch(addmovies(movieList));
+    //console.log("State", this.props.store.getState());
   }
 
   isfav = (movie) => {
-    const { movies } = this.props.store.getState();
+    const { movies } = this.props;
     const { favourite } = movies;
     const index = favourite.indexOf(movie);
     if (index !== -1) {
@@ -34,19 +37,16 @@ class App extends React.Component {
     return false;
   };
   render() {
-    const { movies, search } = this.props.store.getState();
+    const { movies, search } = this.props;
     const { list, favourite } = movies;
-    console.log(this.props.store.getState());
 
+    console.log(this.props);
     console.log("fav", favourite);
+
     return (
       <div className="App">
         <section className="nav">
-          <Navbar
-            movies={movies}
-            search={search}
-            dispatch={this.props.store.dispatch}
-          />
+          <Navbar/>
         </section>
         <section id="home">
           <Home />
@@ -55,7 +55,7 @@ class App extends React.Component {
           <h1 className="Fav">All Movies</h1>
           <Movies
             movies={list}
-            dispatch={this.props.store.dispatch}
+            dispatch={this.props.dispatch}
             isfav={this.isfav}
           />
         </section>
@@ -63,7 +63,7 @@ class App extends React.Component {
           <h1 className="Fav">Fav Movies</h1>
           <FavMovies
             favmovie={favourite}
-            dispatch={this.props.store.dispatch}
+            dispatch={this.props.dispatch}
             isfav={this.isfav}
           />
         </section>
@@ -72,4 +72,23 @@ class App extends React.Component {
   }
 }
 
-export default App;
+// class AppWrapper extends React.Component{
+//   render(){
+//     return(
+//       <StoreContext.Consumer>
+//         {(store)=> <App store={store}/>}
+//       </StoreContext.Consumer>
+//     )
+//   }
+// }
+ 
+// export default AppWrapper;
+
+function callback(state){
+  return{
+    movies:state.movies,
+    search:state.search
+  }
+}
+
+export default connect(callback)(App);

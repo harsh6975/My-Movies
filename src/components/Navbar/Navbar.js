@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+import { Link as Link1 } from "react-scroll";
+import { addMovieToList, movieSearch } from "../../Redux/Action/type";
+
 import { Button } from "../Button";
 import { MenuItems } from "./MenuItems";
-import { Link as Link1 } from "react-scroll";
 import logo from "../../Images/logo.png";
 import "./Navbar.css";
-import { addMovieToList, movieSearch } from "../../Redux/Action/type";
 
 const Navbar = (props) => {
   const [clicked, setclick] = useState("false");
@@ -50,6 +52,7 @@ const Navbar = (props) => {
               <img src={movie.Poster} alt="search-pic" />
               <div className="movie-info">
                 <span>{movie.Title}</span>
+                <span>Rating : {movie.imdbRating }</span>
                 <button onClick={() => handleAddToMovies(movie)}>
                   Add to Movies
                 </button>
@@ -77,4 +80,13 @@ const Navbar = (props) => {
     </nav>
   );
 };
-export default Navbar;
+// export default Navbar;
+
+function mapStateToProps(state){
+  return{
+    movies:state.movies,
+    search:state.search
+  }
+}
+
+export default connect(mapStateToProps)(Navbar);
