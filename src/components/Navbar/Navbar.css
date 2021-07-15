@@ -10,7 +10,7 @@
   );
   height: 100px;
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
   align-items: center;
   font-size: 1.2rem;
   padding-top: 10px;
@@ -29,7 +29,7 @@
   position: absolute;
   right: 50%;
 }
-.mybut{
+.mybut {
   padding: 2px 24px;
   border-radius: 16px;
 }
@@ -68,7 +68,7 @@
   color: white;
   display: none;
 }
-.mobSearch{
+.mobSearch {
   display: none;
 }
 .search-results {
@@ -111,12 +111,12 @@
   color: white;
 }
 
-@media only screen and (max-width: 778px) , (max-width: 1345px) {
-  .NavbarItems{
+@media only screen and (max-width: 778px), (max-width: 1345px) {
+  .NavbarItems {
     position: relative;
     height: 80px;
   }
-  .nav-menu{
+  .nav-menu {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -129,42 +129,42 @@
   .navbar-logo {
     padding-right: 0%;
   }
-  .input{
+  .input {
     position: absolute;
     left: 60%;
   }
   .giveInput {
     padding: 6px 12px;
   }
-  .mybut{
+  .mybut {
     padding: 4px 12px;
     border-radius: 12px;
   }
-  .nav-menu.active{
+  .nav-menu.active {
     background-color: black;
     left: 0;
-    opacity: .8;
+    opacity: 0.8;
     transition: all 0.5s ease;
     z-index: 1000;
   }
-  .nav-links{
+  .nav-links {
     text-align: center;
     width: 100%;
     display: table;
   }
-  .nav-links:hover{
-     background-color: red;
+  .nav-links:hover {
+    background-color: red;
   }
-  .navbar-logo{
+  .navbar-logo {
     position: absolute;
     left: 0;
     width: 10%;
     height: 50%;
   }
-  .menu-icon{
+  .menu-icon {
     position: absolute;
     display: block;
-    right: 15px;  
+    right: 15px;
     font-size: 30px;
   }
   .search-results {
@@ -173,18 +173,18 @@
     top: 70px;
   }
 }
-@media only screen and (max-width: 778px){
-.input{
-  position: absolute;
-  left: 80%;
+@media only screen and (max-width: 778px) {
+  .input {
+    position: absolute;
+    left: 80%;
+  }
+  .search-results {
+    position: relative;
+    left: 0%;
+    top: 200%;
+  }
 }
-.search-results {
-  position: relative;
-  left: 0%;
-  top: 200%;
-}
-}
-@media only screen and (max-width: 1350px){
+@media only screen and (max-width: 1350px) {
   .search-results {
     position: relative;
     left: 0%;
