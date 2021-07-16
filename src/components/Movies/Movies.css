@@ -1,5 +1,5 @@
 .moviecontainer{
-    background-image: url(../../Images/back5.jpg);
+    background-color: black;
     z-index: -999;
     display: flex;
     flex-wrap: wrap;

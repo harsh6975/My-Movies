@@ -28,6 +28,7 @@ const Navbar = (props) => {
   };
 
   const { result: movie, showSearchResults } = props.search;
+  console.log("movie", movie.Response);
 
   return (
     <nav className="NavbarItems">
@@ -41,22 +42,30 @@ const Navbar = (props) => {
           className="giveInput"
           onChange={handleChange}
         />
-        <button onClick={handleSearch} className="mybut">Search</button>
+        <button onClick={handleSearch} className="mybut">
+          Search
+        </button>
       </div>
-      {showSearchResults && (
-          <div className="search-results">
-            <div className="search-result">
-              <img src={movie.Poster} alt="search-pic" />
-              <div className="movie-info">
-                <span>{movie.Title}</span>
-                <span>Rating : {movie.imdbRating}</span>
-                <button onClick={() => handleAddToMovies(movie)}>
-                  Add to Movies
-                </button>
-              </div>
+      {movie.Response === "False" && (
+        <div className="notfound">
+          <h1 style={{paddingBottom:8}}>Sorry</h1>
+          <h1 >Movie Not Found</h1>
+        </div>
+      )}
+      {movie.Response === "True" && showSearchResults && (
+        <div className="search-results">
+          <div className="search-result">
+            <img src={movie.Poster} alt="search-pic" />
+            <div className="movie-info">
+              <span>{movie.Title}</span>
+              <span>Rating : {movie.imdbRating}</span>
+              <button onClick={() => handleAddToMovies(movie)}>
+                Add to Movies
+              </button>
             </div>
           </div>
-        )}
+        </div>
+      )}
       <ul className={!clicked ? "nav-menu active" : "nav-menu"}>
         {MenuItems.map((items, index) => {
           return (

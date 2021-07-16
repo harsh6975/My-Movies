@@ -110,8 +110,23 @@
   font-weight: 600;
   color: white;
 }
+.notfound{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  position: relative;
+  background: black;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  left: 22%;
+  top: 70%;
+  opacity: 0.8;
+}
 
-@media only screen and (max-width: 778px), (max-width: 1345px) {
+@media only screen and (max-width: 778px), (max-width: 1350px) {
   .NavbarItems {
     position: relative;
     height: 80px;
@@ -172,16 +187,25 @@
     left: 13%;
     top: 70px;
   }
+  .notfound{
+    left: -1%;
+    top: 100%;
+    padding: 10px;
+    opacity: 0.9;
+  }
 }
 @media only screen and (max-width: 778px) {
   .input {
     position: absolute;
-    left: 80%;
+    left: 82%;
   }
   .search-results {
     position: relative;
     left: 0%;
     top: 200%;
+  }
+  .notfound{
+    left: -8%;
   }
 }
 @media only screen and (max-width: 1350px) {

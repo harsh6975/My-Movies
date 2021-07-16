@@ -21,14 +21,14 @@ const Card = (props) => {
         <img src={movie.Poster} alt="images"></img>
       </div>
       <div className="butt">
-        <button className="fbut">Watch</button>
+        {/* <button className="fbut">Watch</button> */}
         {!props.isfav ? (
           <button className="fbut" onClick={hanleFav}>
             Favourite
           </button>
         ) : (
-          <button className="fbut" onClick={hanleUnFav}>
-            Unfavourite
+          <button className="rfbut" onClick={hanleUnFav}>
+            Remove From Favourite
           </button>
         )}
       </div>
